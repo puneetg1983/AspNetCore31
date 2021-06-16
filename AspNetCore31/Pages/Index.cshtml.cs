@@ -23,7 +23,8 @@ namespace AspNetCore31.Pages
             var list = new List<string>();
             foreach (DictionaryEntry env in System.Environment.GetEnvironmentVariables())
             {
-                list.Add($"{env.Key}={env.Value}");
+                if (env.Key.ToString().Contains("profile", StringComparison.OrdinalIgnoreCase))
+                    list.Add($"{env.Key}={env.Value}");
             }
 
             ViewData["EnvVars"] = list.OrderBy(x => x).ToList();

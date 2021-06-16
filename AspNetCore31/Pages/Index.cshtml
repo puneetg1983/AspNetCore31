@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@{
+    List<string> envvars = ViewData["EnvVars"] as List<string>;
+
+    if (envvars != null && envvars.Count > 0)
+    {
+        // We have some errors to display
+        <div>
+            <ul>
+                @foreach (var envvar in envvars)
+                {
+                    <li>
+                        @envvar
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+}  

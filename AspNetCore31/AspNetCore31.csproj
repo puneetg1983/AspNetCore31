@@ -4,7 +4,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>AspNetCore31</AssemblyName>
     <RootNamespace>AspNetCore31</RootNamespace>
-    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
-
+  
 </Project>

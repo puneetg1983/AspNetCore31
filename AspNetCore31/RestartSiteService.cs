@@ -9,9 +9,13 @@ namespace AspNetCore31
     {
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            var rand = new Random();
+            int intRandomMinutes = rand.Next(5, 15);
+            var sleepTimeSpan = new TimeSpan(1, intRandomMinutes, 0);
+
             while (!stoppingToken.IsCancellationRequested)
             {
-                await Task.Delay(TimeSpan.FromHours(1), stoppingToken);
+                await Task.Delay(sleepTimeSpan, stoppingToken);
                 Environment.FailFast("Restarting the process");
             }
         }
